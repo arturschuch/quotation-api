@@ -46,10 +46,22 @@ public class Quotation {
 		Currency fromCurrency = this.getCurrency(currencies, from);
 		Currency toCurrency = this.getCurrency(currencies, to);
 		
-		BigDecimal result = fromCurrency.getSellingRate().divide(toCurrency.getSellingRate(), RoundingMode.CEILING);
-		return result.multiply(new BigDecimal(value.longValue())).setScale(2, RoundingMode.CEILING);
+		BigDecimal result = divide(fromCurrency, toCurrency);
+		return this.multiplyOn2Scale(result, value);
 	}
 
+	private BigDecimal divide(Currency fromCurrency, Currency toCurrency) {
+		BigDecimal fromRate = fromCurrency.getSellingRate();
+		BigDecimal toRate = toCurrency.getSellingRate();
+		
+		return fromRate.divide(toRate, RoundingMode.CEILING);
+	}
+	
+	private BigDecimal multiplyOn2Scale(BigDecimal amount, Number value) {
+		BigDecimal valueToMultiply = new BigDecimal(value.longValue());
+		
+		return amount.multiply(valueToMultiply).setScale(2, RoundingMode.CEILING);
+	}
 
 	private String changeQuotation(Date date) {
 		return DateUtils.getStringDate(DateUtils.getDateWithDayOfWeek(date));
