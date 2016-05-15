@@ -1,6 +1,8 @@
 # quotation-api
 
-API to get currency quotation on determinated date consulting on Brazil central bank web site:
+API to get currency quotation on determinated date.
+
+The data source used will be the Brazilian central bank CSV file available at:
 http://www4.bcb.gov.br/pec/taxas/batch/cotacaomoedas.asp?id=txtodas
 
 It was created the function currencyQuotation that return the quotation of "from" to "to" 
@@ -30,8 +32,6 @@ _quotationDate: A date as String in the format “dd/MM/yyyy”;_
 * For non-working days (Saturday and Sunday, ignoring holidays) takes the quotation from the immediately preceding business day. If the quotation of the previous day is not available, an exception must be thrown;
 
 * If the quotation date is not available, an exception must be thrown;
-
-* The data source used will be the Brazilian central bank CSV file available at:
 
 * The return value should be rounded to two decimal places.
 
