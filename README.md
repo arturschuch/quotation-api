@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/arturschuch/quotation-api.svg?branch=master)](https://travis-ci.org/arturschuch/quotation-api)
+[![Coverage Status](https://coveralls.io/repos/github/arturschuch/quotation-api/badge.svg?branch=master)](https://coveralls.io/github/arturschuch/quotation-api?branch=master)
 
 # quotation-api
 
