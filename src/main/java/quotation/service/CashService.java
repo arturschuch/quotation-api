@@ -8,12 +8,14 @@ import quotation.model.Currency;
 
 public class CashService {
 
+	private static CashService cashService;
+	
 	private HashMap<String, List<Currency>> cashCurrencies;
 	private ExchangeRateService exchangeRateService;
 		
-	public CashService() {
+	public CashService(ExchangeRateService exchangeRateService) {
 		this.cashCurrencies = new HashMap<String, List<Currency>>();
-		this.exchangeRateService = new ExchangeRateService();
+		this.exchangeRateService = exchangeRateService;
 	}
 	
 	public List<Currency> getCurrencies(String quotation) throws NoExchangeRateForThisDateException {
@@ -34,6 +36,13 @@ public class CashService {
 
 	private List<Currency> getCurrenciesOfMap(String key){
 		return cashCurrencies.get(key);
+	}
+
+	public static CashService getInstance(ExchangeRateService exchangeRateService) {
+		if(cashService == null) {
+			cashService = new CashService(exchangeRateService);
+	    }
+	    return cashService;
 	}
 	
 	

@@ -11,6 +11,7 @@ import quotation.exception.NoExchangeRateForThisDateException;
 import quotation.exception.NonexistentCurrencyException;
 import quotation.model.Currency;
 import quotation.service.CashService;
+import quotation.service.ExchangeRateService;
 import quotation.utils.DateUtils;
 
 public class Quotation {
@@ -18,7 +19,7 @@ public class Quotation {
 	private CashService cashService;
 	
 	public Quotation() {
-		this.cashService = new CashService();
+		this.cashService = CashService.getInstance(new ExchangeRateService());
 	}
 	
 	/**

@@ -35,4 +35,5 @@ public class ExchangeRateService {
 		String[] date = quotation.split(DATE_SEPARETOR);
 		return date[2] + date[1] + date[0];
 	}
+
 }
