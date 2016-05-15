@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/arturschuch/quotation-api.svg?branch=develop)](https://travis-ci.org/arturschuch/quotation-api)
+
 # quotation-api
 
 API to get currency quotation on determinated date.
