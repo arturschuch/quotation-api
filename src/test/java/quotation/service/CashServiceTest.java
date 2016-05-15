@@ -17,7 +17,7 @@ public class CashServiceTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		cashService = new CashService();
+		cashService = new CashService(new ExchangeRateService());
 	}
 	
 	@Test
