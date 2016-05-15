@@ -3,7 +3,7 @@
 API to get currency quotation on determinated date consulting on Brazil central bank web site:
 http://www4.bcb.gov.br/pec/taxas/batch/cotacaomoedas.asp?id=txtodas
 
-It was created the fucntion currencyQuotation that return the quotation of "from" to "to" 
+It was created the function currencyQuotation that return the quotation of "from" to "to" 
 
 ```
 public BigDecimal currencyQuotation(String from, String to, Number value, String quotationDate);
