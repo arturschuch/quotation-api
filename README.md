@@ -1,4 +1,4 @@
-# quotation-system
+# quotation-api
 
 It was creadted the fucntion currencyQuotation that return the quotation of "from" to "to" 
 
