@@ -45,7 +45,7 @@ public class QuotationTest {
 	
 	@Test(expected=NonexistentCurrencyException.class)
 	public void testCurrencyWithoutExistentCurrencyOnTo() throws IllegalValueException, IllegalDateException, NoExchangeRateForThisDateException, NonexistentCurrencyException {
-		quotation.currencyQuotation("EUR", "XXX", 100.00, "20/11/2014");
+		quotation.currencyQuotation("EUR", "ZZZ", 100.00, "20/11/2014");
 	}
 	
 	@Test
