@@ -40,11 +40,11 @@ public class Quotation {
 		}
 		
 		Date date = DateUtils.getDate(quotationDate);
-		quotationDate = changeQuotation(date);
+		quotationDate = this.changeQuotation(date);
 		
 		List<Currency> currencies = cashService.getCurrencies(quotationDate);
-		Currency fromCurrency = getCurrency(currencies, from);
-		Currency toCurrency = getCurrency(currencies, to);
+		Currency fromCurrency = this.getCurrency(currencies, from);
+		Currency toCurrency = this.getCurrency(currencies, to);
 		
 		BigDecimal result = fromCurrency.getSellingRate().divide(toCurrency.getSellingRate(), RoundingMode.CEILING);
 		return result.multiply(new BigDecimal(value.longValue())).setScale(2, RoundingMode.CEILING);

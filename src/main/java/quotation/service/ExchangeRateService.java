@@ -18,7 +18,7 @@ public class ExchangeRateService {
 	public List<Currency> getCurrencies(String quotation) throws NoExchangeRateForThisDateException {
 		List<Currency> currencies = new ArrayList<Currency>();
 		try {
-			URL url = new URL(URL_EXCHANGE_RATE + changeFormat(quotation) + FORMAT);
+			URL url = new URL(URL_EXCHANGE_RATE + this.changeFormat(quotation) + FORMAT);
 			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 			String line;
 	        while ((line = in.readLine()) != null)
