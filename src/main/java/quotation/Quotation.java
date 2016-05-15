@@ -21,15 +21,28 @@ public class Quotation {
 		this.cashService = new CashService();
 	}
 	
-	public BigDecimal currencyQuotation(String from, String to, Number value, String quotation) throws IllegalValueException, IllegalDateException, NoExchangeRateForThisDateException, NonexistentCurrencyException {
+	/**
+	 * @param from - currency that will be passed the value
+	 * @param to - currency that will be changed the value
+	 * @param value - value to be converted
+	 * @param quotationDate - specific date that want the quotation
+	 *
+	 * @return Quotation of "from" to "to" at that date
+	 * 
+	 * @throws IllegalValueException - when value is negative
+	 * @throws IllegalDateException - when date is invalid
+	 * @throws NoExchangeRateForThisDateException - when don't exists exchange rate to specific date 
+	 * @throws NonexistentCurrencyException - when the currency name doesn't exists
+	 */
+	public BigDecimal currencyQuotation(String from, String to, Number value, String quotationDate) throws IllegalValueException, IllegalDateException, NoExchangeRateForThisDateException, NonexistentCurrencyException {
 		if (value.intValue() < 0) {
 			throw new IllegalValueException();
 		}
 		
-		Date date = DateUtils.getDate(quotation);
-		quotation = changeQuotation(date);
+		Date date = DateUtils.getDate(quotationDate);
+		quotationDate = changeQuotation(date);
 		
-		List<Currency> currencies = cashService.getCurrencies(quotation);
+		List<Currency> currencies = cashService.getCurrencies(quotationDate);
 		Currency fromCurrency = getCurrency(currencies, from);
 		Currency toCurrency = getCurrency(currencies, to);
 		
