@@ -35,4 +35,4 @@ _quotationDate: A date as String in the format “dd/MM/yyyy”;_
 
 * The return value should be rounded to two decimal places.
 
-* ! You must convert the currency through rate "Taxa Compra".
+* You must convert the currency through rate "Taxa Compra".
