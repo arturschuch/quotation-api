@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/arturschuch/quotation-api.svg?branch=develop)](https://travis-ci.org/arturschuch/quotation-api)
+[![Build Status](https://travis-ci.org/arturschuch/quotation-api.svg?branch=master)](https://travis-ci.org/arturschuch/quotation-api)
+[![Code Climate](https://codeclimate.com/github/mauricioklein/docker-compose-api/badges/gpa.svg)](https://codeclimate.com/github/arturschuch/quotation-api)
 
 # quotation-api
 
