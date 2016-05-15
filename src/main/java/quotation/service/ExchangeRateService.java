@@ -14,6 +14,7 @@ public class ExchangeRateService {
 
 	private final String URL_EXCHANGE_RATE = "http://www4.bcb.gov.br/Download/fechamento/"; 
 	private final String FORMAT = ".csv";
+	private final String DATE_SEPARETOR = "/";
 	
 	public List<Currency> getCurrencies(String quotation) throws NoExchangeRateForThisDateException {
 		List<Currency> currencies = new ArrayList<Currency>();
@@ -31,7 +32,7 @@ public class ExchangeRateService {
 	}
 	
 	private String changeFormat(String quotation) {
-		String[] date = quotation.split("/");
+		String[] date = quotation.split(DATE_SEPARETOR);
 		return date[2] + date[1] + date[0];
 	}
 }
